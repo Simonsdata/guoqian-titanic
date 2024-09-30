@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 print("Titanic App by Guo Qian")
 
 # read csv and show the dataframe
-df = pd.read_csv('test.csv')
+df = pd.read_csv('D:\桌面\ml4biz\homework\test.csv')
 print(df)
 
 # create a figure with three subplots, size should be (15, 5)
