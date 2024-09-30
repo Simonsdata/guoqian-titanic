@@ -7,7 +7,7 @@ sns.set()
 st.title("Titanic App by Guo Qian")
 
 # read csv and show the dataframe
-df = pd.read_csv('test.csv')
+df = pd.read_csv('train.csv')
 df
 
 # create a figure with three subplots, size should be (15, 5)
