@@ -1,6 +1,8 @@
-
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
 
 st.title("Titanic App by Guo Qian")
 
