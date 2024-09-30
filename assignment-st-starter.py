@@ -11,15 +11,18 @@ df = pd.read_csv('test.csv')
 df
 
 # create a figure with three subplots, size should be (15, 5)
-fig, axs = plt.subplots(1, 3, figsize=(15, 5))
 # show the box plot for ticket price with different classes
 # you need to set the x labels and y labels
 # a sample diagram is shown below
 
-for i, cls in enumerate(sorted(df['Pclass'].unique()), start=0):
-    axs[i].boxplot(df[df['Pclass'] == cls]['Fare'].dropna(), patch_artist=True)
-    axs[i].set_title(f'Box Plot of Ticket Prices for Class {cls}')
-    axs[i].set_xlabel('Class ' + str(cls))
-    axs[i].set_ylabel('Ticket Price ($)')
-plt.tight_layout()
+fig, ax = plt.subplots(1, 3,figsize=(15, 5))
+classes = df['Pclass'].unique()
+for i, pclass in enumerate(sorted(classes)):
+    # 选择当前 Pclass 的数据
+    data = df[df['Pclass'] == pclass]['Fare']
+    ax[i].boxplot(data, patch_artist=True)
+ax[0].set_ylabel('Fare')
+ax[0].set_xlabel('Pclass = 1')
+ax[1].set_xlabel('Pclass = 2')
+ax[2].set_xlabel('Pclass = 3')
 st.pyplot(fig)
